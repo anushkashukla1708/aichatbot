@@ -15,8 +15,9 @@ with open(
 ) as f:
     documents = json.load(f)
 
-
 def retrieve(query, top_k=3):
+
+    print("DEBUG query type:", type(query), "value:", repr(query))
 
     embedding = model.encode([query])
 
