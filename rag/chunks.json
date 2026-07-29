@@ -1,0 +1,42 @@
+[
+    {
+        "title": "About",
+        "text": "{'title': 'About Me', 'intro': 'I am a Computer Science Engineering student passionate about building modern web applications. I love solving problems with Data Structures, developing full-stack applications and exploring AI technologies.', 'goal': 'My goal is to create impactful software solutions and continuously improve my development skills.', 'stats': [{'value': '5+', 'label': 'Projects'}, {'value': '100+', 'label': 'DSA Problems'}, {'value': '7+', 'label': 'Technologies'}, {'value': '\u221e', 'label': 'Learning'}]}"
+    },
+    {
+        "title": "Skills",
+        "text": "[{\"title\": \"Frontend\", \"icon\": {}, \"skills\": [\"HTML5\", \"CSS3\", \"JavaScript\", \"React.js\", \"Next.js\", \"Tailwind CSS\"]}, {\"title\": \"Backend\", \"icon\": {}, \"skills\": [\"Node.js\", \"Express.js\", \"FastAPI\"]}, {\"title\": \"Programming\", \"icon\": {}, \"skills\": [\"C\", \"C++\", \"Java\", \"Python\", \"Data Structures & Algorithms\"]}, {\"title\": \"Database\", \"icon\": {}, \"skills\": [\"MySQL\", \"SQLite\", \"MongoDB\"]}, {\"title\": \"Tools & AI\", \"icon\": {}, \"skills\": [\"Git\", \"GitHub\", \"Docker\", \"Postman\", \"PyMuPDF\", \"Ollama\", \"VS Code\"]}]"
+    },
+    {
+        "title": "Education",
+        "text": "[{\"degree\": \"B.Tech - Computer Science Engineering\", \"college\": \"KIET University, Ghaziabad\", \"year\": \"2025 - 2029\", \"cgpa\": \"CGPA: 8.87\"}]"
+    },
+    {
+        "title": "Experience",
+        "text": "[{\"role\": \"Web Development Intern\", \"company\": \"Vatsalya Rudra Gaushala & Child Foundation\", \"duration\": \"July 2026\", \"description\": \"Built the NGO Management System including volunteer database, attendance management and website improvements.\"}]"
+    },
+    {
+        "title": "Contact",
+        "text": "{\"title\": \"Contact Me\", \"email\": \"anushka.shukla1708@gmail.com\", \"phone\": \"+91 8851060347\", \"location\": \"India\"}"
+    },
+    {
+        "title": "Verdict Lens",
+        "text": "{\"title\": \"Verdict Lens\", \"image\": \"/projects/verdict.png\", \"description\": \"AI-powered legal intelligence platform that analyzes court judgments, extracts important information, tracks compliance deadlines, and generates legal reports.\", \"tech\": [\"React\", \"FastAPI\", \"Python\", \"SQLite\", \"PyMuPDF\", \"Docker\", \"Ollama\"], \"github\": \"#\", \"live\": \"#\", \"featured\": true}"
+    },
+    {
+        "title": "Vatsalya NGO Management System",
+        "text": "{\"title\": \"Vatsalya NGO Management System\", \"image\": \"/projects/vatsalya.png\", \"description\": \"A complete NGO management platform for managing volunteers, attendance tracking, records, and organization activities.\", \"tech\": [\"Next.js\", \"React\", \"Tailwind CSS\", \"MongoDB\"], \"github\": \"#\", \"live\": \"#\", \"featured\": false}"
+    },
+    {
+        "title": "Amazon Clone",
+        "text": "{\"title\": \"Amazon Clone\", \"image\": \"/projects/amazon.png\", \"description\": \"A responsive Amazon e-commerce clone with product listings, shopping cart UI, authentication flow, and modern frontend design.\", \"tech\": [\"React.js\", \"JavaScript\", \"CSS\", \"Firebase\"], \"github\": \"#\", \"live\": \"#\", \"featured\": false}"
+    },
+    {
+        "title": "Portfolio Website",
+        "text": "{\"title\": \"Portfolio Website\", \"image\": \"/projects/portfolio.png\", \"description\": \"Personal developer portfolio with dark mode, animations, responsive design, and modern glassmorphism UI.\", \"tech\": [\"Next.js\", \"Tailwind CSS\", \"Framer Motion\"], \"github\": \"#\", \"live\": \"#\", \"featured\": false}"
+    },
+    {
+        "title": "Resume",
+        "text": "Anushka Shukla\nGhaziabad | 8851060347 |\nanushka.shukla1708@gmail.com\nProfessional Summary\nComputer Science student at KIET University with CGPA 8.87. Passionate about AI, full-stack\ndevelopment, and solving real-world problems through scalable web applications.\nEducation\nKIET University\nB.Tech in Computer Science Engineering\nCGPA: 8.87\nTechnical Skills\nLanguages: C, C++, Java, Python, JavaScript\nFrontend: HTML, CSS, React.js, Next.js, Tailwind CSS\nBackend: Node.js, Express.js, FastAPI\nDatabases: MySQL, SQLite, MongoDB\nTools: Git, GitHub, Docker, Postman, VS Code, PyMuPDF, Ollama\nProjects\nVerdict Lens \u2013 AI-powered legal intelligence platform with PDF analysis, OCR, translation,\ncompliance tracking, and case summarization.\nVatsalya NGO Management System \u2013 Built attendance management, volunteer database, and\nwebsite for NGO operations.\nAmazon Clone \u2013 Responsive e-commerce frontend replicating Amazon UI using modern web\ntechnologies.\nPortfolio Website \u2013 Personal portfolio built with Next.js, Tailwind CSS, animations, dark mode, and\nresponsive UI.\n"
+    }
+]

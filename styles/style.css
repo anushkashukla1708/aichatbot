@@ -1,0 +1,60 @@
+.stApp{
+    background:#0f172a;
+}
+
+.block-container{
+    max-width:900px;
+}
+
+[data-testid="stChatMessage"]{
+    border-radius:18px;
+    padding:15px;
+    margin-bottom:15px;
+    animation:fade .35s ease;
+}
+
+[data-testid="stChatMessage"]:nth-child(even){
+    background:#1e293b;
+}
+
+[data-testid="stChatMessage"]:nth-child(odd){
+    background:#111827;
+}
+
+.stChatInput{
+    position:sticky;
+    bottom:0;
+}
+
+button{
+    border-radius:12px !important;
+}
+
+.stButton>button{
+    width:100%;
+    background:#6d28d9;
+    color:white;
+    border:none;
+}
+
+.stButton>button:hover{
+    background:#7c3aed;
+}
+
+.css-1v0mbdj img{
+    border-radius:50%;
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}

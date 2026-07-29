@@ -1,0 +1,109 @@
+import os
+from dotenv import load_dotenv
+from google import genai
+
+from prompts import SYSTEM_PROMPT
+from rag.search import retrieve
+from resume_reader import read_resume
+
+load_dotenv()
+
+client = genai.Client(
+    api_key=os.getenv("GEMINI_API_KEY")
+)
+
+
+def ask_anushka_gpt(question, history):
+
+    # Retrieve relevant documents from FAISS
+    documents = retrieve(question)
+
+    knowledge = "\n\n".join(
+        f"{doc['title']}\n{doc['text']}"
+        for doc in documents
+    )
+
+    # Read resume
+    resume = read_resume()
+
+    # Build prompt
+    prompt = f"""
+{SYSTEM_PROMPT}
+
+Relevant Portfolio Information:
+
+{knowledge}
+
+Resume Information:
+
+{resume}
+
+Instructions:
+- Answer ONLY using the information above.
+- Combine portfolio and resume information.
+- If the answer is unavailable, politely say you don't know.
+"""
+
+    contents = [
+        {
+            "role": "user",
+            "parts": [{"text": prompt}]
+        }
+    ]
+
+    # Previous chat history
+    for msg in history:
+
+        role = "model" if msg["role"] == "assistant" else "user"
+
+        contents.append(
+            {
+                "role": role,
+                "parts": [{"text": msg["content"]}]
+            }
+        )
+
+    # Current question
+    contents.append(
+        {
+            "role": "user",
+            "parts": [{"text": question}]
+        }
+    )
+
+    response = client.models.generate_content(
+        model="gemini-flash-latest",
+        contents=contents
+    )
+
+    return response.text
+
+
+if __name__ == "__main__":
+
+    history = []
+
+    while True:
+
+        question = input("\nYou: ")
+
+        if question.lower() == "exit":
+            break
+
+        answer = ask_anushka_gpt(question, history)
+
+        print("\nAnushkaGPT:", answer)
+
+        history.append(
+            {
+                "role": "user",
+                "content": question
+            }
+        )
+
+        history.append(
+            {
+                "role": "assistant",
+                "content": answer
+            }
+        )
