@@ -7,10 +7,9 @@ def speak(text):
 
     tts = gTTS(text=text, lang="en")
 
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as fp:
-        tts.save(fp.name)
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as file:
+        audio_path = file.name
+        tts.save(audio_path)
 
-        audio_file = open(fp.name, "rb")
-        audio_bytes = audio_file.read()
-
-        st.audio(audio_bytes, format="audio/mp3")
+    with open(audio_path, "rb") as audio:
+        st.audio(audio.read(), format="audio/mp3")
