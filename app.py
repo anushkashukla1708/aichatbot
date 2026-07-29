@@ -277,28 +277,36 @@ if question:
     ):
 
         placeholder = st.empty()
-with st.status(
-    "🤖 Processing...",
-    expanded=True
-) as status:
 
-    st.write("🔍 Searching Portfolio...")
-    time.sleep(0.3)
+        with st.status(
+            "🤖 Processing...",
+            expanded=True
+        ) as status:
 
-    st.write("📄 Reading Resume...")
-    time.sleep(0.3)
+            st.write("🔍 Searching Portfolio...")
+            time.sleep(0.3)
 
-    st.write("🧠 Searching FAISS Vector Database...")
-    time.sleep(0.3)
+            st.write("📄 Reading Resume...")
+            time.sleep(0.3)
 
-    st.write("✨ Generating Response...")
+            st.write("🧠 Searching FAISS Vector Database...")
+            time.sleep(0.3)
 
-    start = time.time()
+            st.write("✨ Generating Response...")
 
-    answer = ask_anushka_gpt(
-        question,
-        st.session_state.messages
-    )
+            start = time.time()
+
+            answer = ask_anushka_gpt(
+                question,
+                st.session_state.messages
+            )
+
+            elapsed = time.time() - start
+
+            status.update(
+                label=f"✅ Done ({elapsed:.2f}s)",
+                state="complete"
+            )
 
     elapsed = time.time() - start
 

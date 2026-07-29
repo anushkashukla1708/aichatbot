@@ -14,12 +14,11 @@ with open(
     encoding="utf-8"
 ) as f:
     documents = json.load(f)
+def retrieve(question):
+    if not question or not str(question).strip():
+        return []
+    embedding = model.encode([question])
 
-def retrieve(query, top_k=3):
-
-   
-
-    embedding = model.encode([query])
 
     embedding = np.array(
         embedding,

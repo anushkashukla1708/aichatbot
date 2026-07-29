@@ -15,29 +15,37 @@ client = genai.Client(
     api_key=os.getenv("GEMINI_API_KEY")
 )
 
-
+if not question or not question.strip():
+    return "Please ask a question."
 def ask_anushka_gpt(question, history):
+
+    if not question or not question.strip():
+        return "Please ask a question."
 
     # Retrieve relevant documents
     portfolio_docs = retrieve(question)
-
     resume_docs = retrieve_resume(question)
 
     print("\n========== Retrieved Documents ==========")
     for doc in portfolio_docs:
         print(doc["title"])
-        portfolio = "\n\n".join(
-        f"{doc['title']}\n{doc['text']}"
-    for doc in portfolio_docs
-)
 
-        resume = "\n\n".join(
+    portfolio = "\n\n".join(
         f"{doc['title']}\n{doc['text']}"
-    for doc in resume_docs
-)
+        for doc in portfolio_docs
+    )
+
+    resume_docs_text = "\n\n".join(
+        f"{doc['title']}\n{doc['text']}"
+        for doc in resume_docs
+    )
 
     # Read Resume
     resume = read_resume()
+    
+
+
+
 
     # Prompt
     prompt = f"""
