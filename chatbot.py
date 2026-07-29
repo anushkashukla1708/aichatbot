@@ -15,8 +15,7 @@ client = genai.Client(
     api_key=os.getenv("GEMINI_API_KEY")
 )
 
-if not question or not question.strip():
-    return "Please ask a question."
+
 def ask_anushka_gpt(question, history):
 
     if not question or not question.strip():
