@@ -7,7 +7,7 @@ from prompts import SYSTEM_PROMPT
 from rag.search import retrieve
 from rag.resume_search import retrieve_resume
 from resume_reader import read_resume
-from speaker import speak
+
 
 load_dotenv()
 
