@@ -1,19 +1,14 @@
 # ---------------- SHOW OLD CHATS ---------------- #
+# ---------------- SHOW OLD CHATS ---------------- #
+import time
+
 import streamlit as st
-import sentence_transformers
-import transformers
-
-st.write(f"sentence-transformers: {sentence_transformers.__version__}")
-st.write(f"transformers: {transformers.__version__}")
-
-
-
-
 
 from chatbot import ask_anushka_gpt
 from pdf import save_chat
 from voice import speech_to_text
 from memory import clear_history
+
 
 
 # ---------------- PAGE CONFIG ---------------- #
