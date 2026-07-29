@@ -184,23 +184,25 @@ with c1:
 
     if st.button("🙋 About Me"):
         st.session_state.question = "Tell me about yourself"
-
+        st.rerun()
     if st.button("💼 Projects"):
         st.session_state.question = "Tell me about your projects"
-
+        st.rerun()
     if st.button("🛠 Skills"):
-        st.session_state.question = "What are your skills?"
-
+         st.session_state.question = "What are your skills?"
+         st.rerun()
 with c2:
 
     if st.button("🎓 Education"):
         st.session_state.question = "Tell me about your education"
-
+        st.rerun()
     if st.button("🏢 Experience"):
         st.session_state.question = "Tell me about your internship"
-
+        st.rerun()
     if st.button("📧 Contact"):
         st.session_state.question = "How can I contact you?"
+        st.rerun()
+
 for message in st.session_state.messages:
 
     avatar = "👩" if message["role"] == "user" else "🤖"
