@@ -8,7 +8,10 @@ from chatbot import ask_anushka_gpt
 from pdf import save_chat
 from voice import speech_to_text
 from memory import clear_history
-
+import sentence_transformers
+import transformers
+st.write("sentence-transformers:", sentence_transformers.__version__)
+st.write("transformers:", transformers.__version__)
 
 
 # ---------------- PAGE CONFIG ---------------- #
