@@ -116,10 +116,7 @@ say you don't know.
 """
 
         # Speak the answer
-        try:
-            speak(response.text)
-        except Exception as e:
-            print("Speaker Error:", e)
+        
 
         return final_answer
 

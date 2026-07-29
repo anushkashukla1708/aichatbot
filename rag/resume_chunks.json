@@ -1,0 +1,6 @@
+[
+    {
+        "title": "Resume Chunk 1",
+        "text": "Anushka Shukla\nGhaziabad | 8851060347 |\nanushka.shukla1708@gmail.com\nProfessional Summary\nComputer Science student at KIET University with CGPA 8.87. Passionate about AI, full-stack\ndevelopment, and solving real-world problems through scalable web applications.\nEducation\nKIET University\nB.Tech in Computer Science Engineering\nCGPA: 8.87\nTechnical Skills\nLanguages: C, C++, Java, Python, JavaScript\nFrontend: HTML, CSS, React.js, Next.js, Tailwind CSS\nBackend: Node.js, Express.js, FastAPI\nDatabases: MySQL, SQLite, MongoDB\nTools: Git, GitHub, Docker, Postman, VS Code, PyMuPDF, Ollama\nProjects\nVerdict Lens \u2013 AI-powered legal intelligence platform with PDF analysis, OCR, translation,\ncompliance tracking, and case summarization.\nVatsalya NGO Management System \u2013 Built attendance management, volunteer database, and\nwebsite for NGO operations.\nAmazon Clone \u2013 Responsive e-commerce frontend replicating Amazon UI using modern web\ntechnologies.\nPortfolio Website \u2013 Personal portfolio built with Next.js, Tailwind CSS, animations, dark mode, and\nresponsive UI."
+    }
+]
