@@ -1,4 +1,8 @@
 # ---------------- SHOW OLD CHATS ---------------- #
+import sentence_transformers
+import transformers
+st.write(f"sentence-transformers: {sentence_transformers.__version__}")
+st.write(f"transformers: {transformers.__version__}")
 import time
 
 
