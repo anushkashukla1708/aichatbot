@@ -1,6 +1,6 @@
 # ---------------- SHOW OLD CHATS ---------------- #
 import time
-from turtle import st
+
 
 
 import streamlit as st
