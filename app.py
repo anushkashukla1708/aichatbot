@@ -8,11 +8,6 @@ from chatbot import ask_anushka_gpt
 from pdf import save_chat
 from voice import speech_to_text
 from memory import clear_history
-import sentence_transformers
-import transformers
-st.write("sentence-transformers:", sentence_transformers.__version__)
-st.write("transformers:", transformers.__version__)
-
 
 # ---------------- PAGE CONFIG ---------------- #
 
@@ -95,7 +90,7 @@ Powered by
     st.success("🟢 AI Online")
     st.divider()
 
-    if st.button("🗑 Clear Chat"):
+    if st.button("🗑 Clear Chat", key="clear_chat_btn"):
 
         st.session_state.messages = []
 
@@ -103,12 +98,11 @@ Powered by
 
         st.rerun()
 
-    if st.button("📄 Download Chat"):
+    if st.button("📄 Download Chat", key="download_chat_btn"):
 
         save_chat(
             st.session_state.messages
         )
-
 
     st.divider()
 
@@ -182,24 +176,25 @@ c1, c2 = st.columns(2)
 
 with c1:
 
-    if st.button("🙋 About Me"):
+    if st.button("🙋 About Me", key="about_top"):
         st.session_state.question = "Tell me about yourself"
         st.rerun()
-    if st.button("💼 Projects"):
+    if st.button("💼 Projects", key="projects_top"):
         st.session_state.question = "Tell me about your projects"
         st.rerun()
-    if st.button("🛠 Skills"):
-         st.session_state.question = "What are your skills?"
-         st.rerun()
+    if st.button("🛠 Skills", key="skills_top"):
+        st.session_state.question = "What are your skills?"
+        st.rerun()
+
 with c2:
 
-    if st.button("🎓 Education"):
+    if st.button("🎓 Education", key="education_top"):
         st.session_state.question = "Tell me about your education"
         st.rerun()
-    if st.button("🏢 Experience"):
+    if st.button("🏢 Experience", key="experience_top"):
         st.session_state.question = "Tell me about your internship"
         st.rerun()
-    if st.button("📧 Contact"):
+    if st.button("📧 Contact", key="contact_top"):
         st.session_state.question = "How can I contact you?"
         st.rerun()
 
@@ -220,7 +215,7 @@ col1, col2 = st.columns([6, 1])
 
 with col2:
 
-    if st.button("🎤"):
+    if st.button("🎤", key="voice_input_btn"):
 
         spoken = speech_to_text()
 
@@ -308,18 +303,9 @@ if question:
                 state="complete"
             )
 
-    elapsed = time.time() - start
+        streamed = ""
 
-    status.update(
-        label=f"✅ Done ({elapsed:.2f}s)",
-        state="complete"
-    )
-
-    elapsed = time.time() - start
-
-    streamed = ""
-
-    for word in answer.split():
+        for word in answer.split():
 
             streamed += word + " "
 
@@ -339,13 +325,13 @@ if question:
 
                 time.sleep(0.02)
 
-    placeholder.markdown(streamed)
+        placeholder.markdown(streamed)
 
-    st.caption(
+        st.caption(
             f"⚡ Response generated in {elapsed:.2f} sec"
         )
 
-    st.code(
+        st.code(
             answer,
             language="markdown"
         )
@@ -358,7 +344,7 @@ if question:
             "content": answer
         }
     )
-        
+
 # ---------------- SUGGESTED QUESTIONS ---------------- #
 
 st.divider()
@@ -371,7 +357,8 @@ with c1:
 
     if st.button(
         "📂 Projects",
-        use_container_width=True
+        use_container_width=True,
+        key="projects_suggested"
     ):
 
         st.session_state.question = (
@@ -384,7 +371,8 @@ with c2:
 
     if st.button(
         "🛠 Skills",
-        use_container_width=True
+        use_container_width=True,
+        key="skills_suggested"
     ):
 
         st.session_state.question = (
@@ -397,7 +385,8 @@ with c3:
 
     if st.button(
         "🎓 Education",
-        use_container_width=True
+        use_container_width=True,
+        key="education_suggested"
     ):
 
         st.session_state.question = (
@@ -414,7 +403,8 @@ with c4:
 
     if st.button(
         "🏢 Experience",
-        use_container_width=True
+        use_container_width=True,
+        key="experience_suggested"
     ):
 
         st.session_state.question = (
@@ -427,7 +417,8 @@ with c5:
 
     if st.button(
         "🤖 Verdict Lens",
-        use_container_width=True
+        use_container_width=True,
+        key="verdict_lens_suggested"
     ):
 
         st.session_state.question = (
@@ -440,7 +431,8 @@ with c6:
 
     if st.button(
         "📧 Contact",
-        use_container_width=True
+        use_container_width=True,
+        key="contact_suggested"
     ):
 
         st.session_state.question = (
@@ -495,24 +487,25 @@ Made with ❤️ by <b>Anushka Shukla</b>
 """,
 unsafe_allow_html=True
 )
+
 st.write("### 🚀 Try asking")
 
 col1, col2, col3 = st.columns(3)
 
 with col1:
 
-    if st.button("👩 About Me", use_container_width=True):
+    if st.button("👩 About Me", use_container_width=True, key="about_bottom"):
         st.session_state.question = "Tell me about yourself"
         st.rerun()
 
 with col2:
 
-    if st.button("💼 Projects", use_container_width=True):
+    if st.button("💼 Projects", use_container_width=True, key="projects_bottom"):
         st.session_state.question = "Tell me about your projects"
         st.rerun()
 
 with col3:
 
-    if st.button("🛠 Skills", use_container_width=True):
+    if st.button("🛠 Skills", use_container_width=True, key="skills_bottom"):
         st.session_state.question = "What are your skills?"
         st.rerun()
