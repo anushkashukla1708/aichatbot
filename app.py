@@ -218,6 +218,9 @@ with col2:
     if st.button("🎤", key="voice_input_btn"):
 
         spoken = speech_to_text()
+        if spoken is None:
+           st.warning("🎤 Voice input isn't available in this environment. Please type your question instead.")
+   
 
         if spoken:
 
@@ -227,7 +230,7 @@ with col2:
 
 
 # ---------------- USER INPUT ---------------- #
-
+g
 typed_question = st.chat_input(
     "Ask anything about Anushka..."
 )
