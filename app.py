@@ -230,7 +230,7 @@ with col2:
 
 
 # ---------------- USER INPUT ---------------- #
-g
+
 typed_question = st.chat_input(
     "Ask anything about Anushka..."
 )
