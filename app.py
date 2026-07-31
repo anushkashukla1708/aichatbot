@@ -211,22 +211,7 @@ for message in st.session_state.messages:
 
 # ---------------- VOICE INPUT ---------------- #
 
-col1, col2 = st.columns([6, 1])
 
-with col2:
-
-    if st.button("🎤", key="voice_input_btn"):
-
-        spoken = speech_to_text()
-        if spoken is None:
-           st.warning("🎤 Voice input isn't available in this environment. Please type your question instead.")
-   
-
-        if spoken:
-
-            st.session_state.question = spoken
-
-            st.rerun()
 
 
 # ---------------- USER INPUT ---------------- #
